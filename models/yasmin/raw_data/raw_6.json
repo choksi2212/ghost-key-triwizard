@@ -1,0 +1,126 @@
+{
+  "sampleId": 6,
+  "timestamp": "2025-07-26T16:06:57.979Z",
+  "rawKeystrokes": [
+    {
+      "key": "e",
+      "type": "keyup",
+      "timestamp": 1167266.800000012
+    },
+    {
+      "key": "r",
+      "type": "keydown",
+      "timestamp": 1167411
+    },
+    {
+      "key": "r",
+      "type": "keyup",
+      "timestamp": 1167509.300000012
+    },
+    {
+      "key": "t",
+      "type": "keydown",
+      "timestamp": 1167631.300000012
+    },
+    {
+      "key": "t",
+      "type": "keyup",
+      "timestamp": 1167760.199999988
+    },
+    {
+      "key": "y",
+      "type": "keydown",
+      "timestamp": 1167979.5
+    },
+    {
+      "key": "y",
+      "type": "keyup",
+      "timestamp": 1168187.300000012
+    },
+    {
+      "key": "y",
+      "type": "keydown",
+      "timestamp": 1170104.699999988
+    },
+    {
+      "key": "y",
+      "type": "keyup",
+      "timestamp": 1170454.1000000238
+    },
+    {
+      "key": "u",
+      "type": "keydown",
+      "timestamp": 1170588.3999999762
+    },
+    {
+      "key": "u",
+      "type": "keyup",
+      "timestamp": 1170759
+    },
+    {
+      "key": "Enter",
+      "type": "keyup",
+      "timestamp": 1171606.699999988
+    },
+    {
+      "key": "q",
+      "type": "keydown",
+      "timestamp": 1180408.8999999762
+    },
+    {
+      "key": "w",
+      "type": "keydown",
+      "timestamp": 1180541.3999999762
+    },
+    {
+      "key": "q",
+      "type": "keyup",
+      "timestamp": 1180613.6000000238
+    },
+    {
+      "key": "w",
+      "type": "keyup",
+      "timestamp": 1180678.1000000238
+    },
+    {
+      "key": "e",
+      "type": "keydown",
+      "timestamp": 1180795.699999988
+    },
+    {
+      "key": "e",
+      "type": "keyup",
+      "timestamp": 1180925.3999999762
+    },
+    {
+      "key": "r",
+      "type": "keydown",
+      "timestamp": 1181042.6000000238
+    },
+    {
+      "key": "r",
+      "type": "keyup",
+      "timestamp": 1181167.1000000238
+    },
+    {
+      "key": "t",
+      "type": "keydown",
+      "timestamp": 1181292.300000012
+    },
+    {
+      "key": "t",
+      "type": "keyup",
+      "timestamp": 1181422.699999988
+    },
+    {
+      "key": "y",
+      "type": "keydown",
+      "timestamp": 1181549.199999988
+    },
+    {
+      "key": "y",
+      "type": "keyup",
+      "timestamp": 1181673.5
+    }
+  ]
+}

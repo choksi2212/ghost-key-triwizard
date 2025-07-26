@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 400px;
+      min-height: 500px;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      color: #e2e8f0;
+    }
+
+    .header {
+      background: linear-gradient(to right, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.9));
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #475569;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      margin: 5px 0 0 0;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .status-card {
+      background: rgba(51, 65, 85, 0.5);
+      border: 1px solid #475569;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ef4444;
+    }
+
+    .status-dot.active {
+      background: #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+    }
+
+    .btn-secondary {
+      background: rgba(71, 85, 105, 0.5);
+      color: #e2e8f0;
+      border: 1px solid #475569;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(71, 85, 105, 0.8);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .feature-list li {
+      padding: 5px 0;
+      font-size: 12px;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-icon {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      background: #06b6d4;
+    }
+
+    .settings-section {
+      border-top: 1px solid #475569;
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+
+    .settings-section h3 {
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+    }
+
+    .checkbox-group label {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .alert {
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .alert-success {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #10b981;
+    }
+
+    .alert-error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+    }
+
+    .alert-info {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #3b82f6;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(71, 85, 105, 0.5);
+      border-radius: 3px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(to right, #06b6d4, #3b82f6);
+      transition: width 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🛡️ GhostKey Authentication</h1>
+    <p>Multi-Modal Biometric Security</p>
+  </div>
+
+  <div class="content">
+    <div class="status-card">
+      <div class="status-indicator">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">Checking authentication status...</span>
+      </div>
+      <ul class="feature-list">
+        <li><div class="feature-icon"></div>Keystroke Dynamics Analysis</li>
+        <li><div class="feature-icon"></div>Voice Biometric Recognition</li>
+        <li><div class="feature-icon"></div>Neural Network Authentication</li>
+        <li><div class="feature-icon"></div>Multi-Factor Security</li>
+      </ul>
+    </div>
+
+    <div id="alertContainer"></div>
+
+    <div id="registrationSection" style="display: none;">
+      <button class="btn btn-primary" id="startRegistration">
+        🔐 Register Biometric Profile
+      </button>
+      <p style="font-size: 12px; color: #94a3b8; text-align: center; margin-top: 10px;">
+        Create your unique keystroke and voice pattern
+      </p>
+    </div>
+
+    <div id="authenticationSection" style="display: none;">
+      <button class="btn btn-primary" id="enableAuth">
+        ⚡ Enable Authentication
+      </button>
+      <button class="btn btn-secondary" id="testAuth">
+        🧪 Test Authentication
+      </button>
+    </div>
+
+    <div id="trainingSection" style="display: none;">
+      <h3>Training Progress</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+      </div>
+      <p id="trainingStatus" style="font-size: 12px; color: #94a3b8; text-align: center;">
+        Ready to start training...
+      </p>
+    </div>
+
+    <div class="settings-section">
+      <h3>⚙️ Settings</h3>
+      <div class="checkbox-group">
+        <input type="checkbox" id="autoEnable" checked>
+        <label for="autoEnable">Auto-enable on login pages</label>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="voiceAuth" checked>
+        <label for="voiceAuth">Voice authentication fallback</label>
+      </div>
+      <div class="checkbox-group">
+        <input type="checkbox" id="privacyMode">
+        <label for="privacyMode">Privacy mode (no raw data storage)</label>
+      </div>
+      <button class="btn btn-secondary" id="clearData">
+        🗑️ Clear All Data
+      </button>
+      <button id="fetchModelsBtn">Sync Biometric Models</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
